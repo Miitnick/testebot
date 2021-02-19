@@ -136,7 +136,7 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
         var { name, formattedTitle, gcok} = chat
         let { pushname, verifiedName, formattedName } = sender
         pushname = pushname || verifiedName || formattedName // verifiedName is the name of someone who uses a business account
-        const botNumber = await aruga.getHostNumber() + '558584166333@c.us'
+        const botNumber = await aruga.getHostNumber() + '628558584166333@c.us'
         const groupId = isGroupMsg ? chat.groupMetadata.id : ''
         const groupAdmins = isGroupMsg ? await aruga.getGroupAdmins(groupId) : ''
         const isGroupAdmins = groupAdmins.includes(sender.id) || false
@@ -169,7 +169,7 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
 	const reason = q ? q : 'Gada'
 
         // [IDENTIFY]
-        const ownerNumber = "62895334951166@c.us"
+        const ownerNumber = "6285521992491007@c.us"
         const isOwnerBot = ownerNumber.includes(pengirim)
         const isOwner = ownerNumber.includes(pengirim)
         const isOwnerB = ownerNumber.includes(pengirim)
@@ -355,20 +355,20 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
 
 
         const mess = {
-            wait: '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar',
+            wait: '[Aguarde] 1min ⏳ se não der certo desculpe',
             error: {
-                St: '[❗] Kirim gambar dengan caption */sticker* atau tag gambar yang sudah dikirim',
-                Ti: '[❗] Replay sticker dengan caption */stickertoimg* atau tag sticker yang sudah dikirim',
-                Qm: '[❗] Terjadi kesalahan, mungkin themenya tidak tersedia!',
-                Yt3: '[❗] Terjadi kesalahan, tidak dapat meng konversi ke mp3!',
-                Yt4: '[❗] Terjadi kesalahan, mungkin error di sebabkan oleh sistem.',
-                Ig: '[❗] Terjadi kesalahan, mungkin karena akunnya private',
-                Ki: '[❗] Bot tidak bisa mengeluarkan Admin group!',
-                Sp: '[❗] Bot tidak bisa mengeluarkan Admin',
-                Ow: '[❗] Bot tidak bisa mengeluarkan Owner',
-                Bk: '[❗] Bot tidak bisa memblockir Owner',
-                Ad: '[❗] Tidak dapat menambahkan target, mungkin karena di private',
-                Iv: '[❗] Link yang anda kirim tidak valid!'
+                St: '[❗] Envie imagens com legenda */sticker* ou marque imagens que foram enviadas',
+                Ti: '[❗] Repita o adesivo com a legenda  */stickertoimg* ou a marque o adesivo que foi enviado',
+                Qm: '[❗] Ocorreu um erro, talvez o tema não esteja disponível!',
+                Yt3: '[❗] Algo deu errado, não foi possível converter para mp3!',
+                Yt4: '[❗] Ocorreu um erro, talvez o erro tenha sido causado pelo sistema.',
+                Ig: '[❗] Ocorreu um erro, talvez porque a conta seja privada',
+                Ki: '[❗] O bot não pode remover o administrador do grupo!',
+                Sp: '[❗] O bot não pode registrar o administrador',
+                Ow: '[❗] O bot não pode emitir o proprietário',
+                Bk: '[❗] Bots não podem bloquear o proprietário',
+                Ad: '[❗] Incapaz de adicionar alvo, talvez porque é privado',
+                Iv: '[❗] O link que você enviou é inválido!'
             }
         }
 
@@ -434,25 +434,25 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
 					const getId = getAfkId(ment)
 					const getReason = getAfkReason(getId)
 					const getTime = getAfkTime(getId)
-					await aruga.reply(from, `*「 AFK MODE 」*\n\nSssttt! Orangnya lagi afk, jangan diganggu!\n➸ *Alasan*: ${getReason}\n➸ *Sejak*: ${getTime}`, id)
+					await aruga.reply(from, `*「MODO AFK」*\n\nSssttt! A pessoa está afk, não se preocupe!\n➸ *Razão*: ${getReason}\n➸ *Desde*: ${getTime}`, id)
 					}
 				}
 				if (checking && !isCmd) {
 					_afk.splice(sender.id, 1)
 					fs.writeFileSync('./lib/database/afk.json', JSON.stringify(_afk))
-					await aruga.sendTextWithMentions(from, `@${pushname} SEKARANG TIDAK *AFK*`)
+					await aruga.sendTextWithMentions(from, `@${pushname} AGORA NÃO ESTÁ * AFK *`)
 				}
 				}
 
 
-        //fitur anti link
+        //recurso anti-link
         if (isGroupMsg && GroupLinkDetector && !isGroupAdmins && !isOwner){
             if (chats.match(/(https:\/\/chat.whatsapp.com)/gi)) {
                 const check = await aruga.inviteInfo(chats);
                 if (!check) {
                     return
                 } else {
-                    aruga.reply(from, '*[GROUP LINK DETECTOR]*\nKamu mengirimkan link grup chat, maaf kamu di kick dari grup :(', id).then(() => {
+                    aruga.reply(from, '*[DETECTOR DO LINK DE GRUPO]*\nVocê enviou o link do bate-papo do grupo, desculpe, você foi expulso do grupo:(', id).then(() => {
                         aruga.removeParticipant(groupId, sender.id)
                     })
                 }
@@ -473,8 +473,8 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
                 })
         }
 
-        // Kerang Menu
-        //BUAT NOMER CEGAN/CECAN, KALIAN BISA CUSTOM SENDIRI, MAKASEH!
+        // Menu shells
+        // FAÇA UMA RUPTURA / NÚMERO CECAN, VOCÊ PODE SE PERSONALIZAR, FAÇA!
 
         const cegan = [
             "https://i.ibb.co/JmVx5bJ/Cogan.jpg",
@@ -486,39 +486,39 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
         ]
         const cecan = [
             {
-            lahwoi : "Bini gua yang ke 1",
+            lahwoi : "Construa a 1ª caverna",
             imagex : "https://i.ibb.co/VT4ggGj/Instagram.jpg",
             },
             {
-            lahwoi : "Bini gua yang ke 2",
+            lahwoi : "Construa a 2ª caverna",
             imagex : "https://i.ibb.co/x1nD1HD/Instagram-1.jpg",
             },
             {
-            lahwoi : "Bini gua yang ke 3",
+            lahwoi : "Construa a 3ª caverna",
             imagex : "https://i.ibb.co/ZXPPFKF/Argumentasi-Dimensi.jpg",
             },
             {
-            lahwoi : "Bini gua yang ke 4",   
+            lahwoi : "Construa a 4ª caverna",   
             imagex : "https://i.ibb.co/NpY5ZBR/image.jpg",
             },
             {
-            lahwoi : "Bini gua yang ke 5",
+            lahwoi : "Construa a 5ª caverna",
             imagex : "https://i.ibb.co/PWsL6HF/download-1.jpg",
             },
             {
-            lahwoi : "Bini gua yang ke 6",
+            lahwoi : "Construa a 6ª caverna",
             imagex :"https://i.ibb.co/JFkDWjB/RASANYA-ANJING-BANGET.jpg",
             },
             {
-            lahwoi : "Bini gua yang ke 7",
+            lahwoi : "Construa a 7ª caverna",
             imagex : "https://i.ibb.co/5W2gMq6/download-2.jpg",
             },
             {
-            lahwoi : "Bini gua yang ke 8",
+            lahwoi : "Construa a 8ª caverna",
             imagex : "https://i.ibb.co/QNWhdgC/download-3.jpg",
             },
             {
-            lahwoi : "Bini gua yang terakhir",
+            lahwoi : "Construa a última caverna",
             imagex : "https://i.ibb.co/RS1vWC3/Blur.jpg"
             }
         ]
