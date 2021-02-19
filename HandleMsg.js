@@ -169,7 +169,7 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
 	const reason = q ? q : 'Gada'
 
         // [IDENTIFY]
-        const ownerNumber = "6285521992491007@c.us"
+        const ownerNumber = "6285521973566055@c.us"
         const isOwnerBot = ownerNumber.includes(pengirim)
         const isOwner = ownerNumber.includes(pengirim)
         const isOwnerB = ownerNumber.includes(pengirim)
