@@ -13,13 +13,13 @@ const start = (aruga = new Client()) => {
     console.log(color('[DEV]'), color('Urbae', 'yellow'))
     console.log(color('[~>>]'), color('BOT Started!', 'green'))
 
-    // Mempertahankan sesi agar tetap nyala
+    // Mantenha a sessão ligada
     aruga.onStateChanged((state) => {
         console.log(color('[~>>]', 'red'), state)
         if (state === 'CONFLICT' || state === 'UNLAUNCHED') aruga.forceRefocus()
     })
 
-    // ketika bot diinvite ke dalam group
+    // quando o bot é convidado para o grupo
      aruga.onAddedToGroup((async (chat) => {
         let totalMem = chat.groupMetadata.participants.length
         let groupName = chat.contact.name
@@ -27,9 +27,9 @@ const start = (aruga = new Client()) => {
         const ownerNumber = '62895334950905@c.us'
         const getAllMembers = await aruga.getGroupMembersId(chat.groupMetadata.id)
         if (totalMem < 300 && !getAllMembers.includes(ownerNumber)) {
-            aruga.sendText(chat.id, `Upss...\n\nUntuk bisa mengundang bot kedalam grup *${name}*. Diwajibkan untuk donasi dulu yah ^^\n\n10K = 1 Minggu\n20K = 1 Bulan\n50K = Forever\n\nJika berminat, langsung chat contact admin dengan cara ketik: */ownerbot*`).then(() => aruga.leaveGroup(chat.id)).then(() => aruga.deleteChat(chat.id))
+            aruga.sendText(chat.id, `Upss ...\n\nPara poder convidar bots para o grupo *${name}*. Você deve comprar a permissão ^^\n\nSe estiver interessado, converse diretamente com o administrador digitando: wa.me/5521992491007`).then(() => aruga.leaveGroup(chat.id)).then(() => aruga.deleteChat(chat.id))
         } else {
-            aruga.sendText(chat.groupMetadata.id, `Halo *${name}* terimakasih sudah menginvite bot ini, untuk melihat menu silahkan kirim */help* dan jangan lupa bantu owner untuk bisa memperbesar server agar bot ini tidak suspend/slow respon dengan cara kirim */donasi*`)
+            aruga.sendText(chat.groupMetadata.id, `Olá *${name}* obrigado por convidar este bot, para ver o menu envie */help* e não se esqueça de ajudar o dono a aumentar o servidor para que o bot não suspenda / ou tenha lentidão no envio`)
         }
     }))
 
@@ -50,7 +50,7 @@ const start = (aruga = new Client()) => {
                 } else {
                     var pp = pic
                 }
-                await aruga.sendFileFromUrl(event.chat, pp, 'profile.jpg', `ey yo *@${event.who.replace(/@c.us/g, '')}* what up!\n\nWelcome to *${name}*\n\nThere is nothing to say, just follow rules of *${name}* Group!\n\n*Commands Bot: /menu, /p*`)
+                await aruga.sendFileFromUrl(event.chat, pp, 'profile.jpg', `ey yo *@${event.who.replace(/@c.us/g, '')}* what up!\n\nBem-vindo a *${name}*\n\nNão há nada a dizer, apenas siga as regras de *${name}* Group!\n\n*Comandos Bot: /menu, /p*`)
             }
         } catch (err) {
             console.error(err)
@@ -58,21 +58,21 @@ const start = (aruga = new Client()) => {
     })
 
     aruga.onIncomingCall(async (callData) => {
-        // ketika seseorang menelpon nomor bot akan mengirim pesan
-        await aruga.sendText(callData.peerJid, 'Maaf sedang tidak bisa menerima panggilan.\n\n-bot')
+        // quando alguém liga para o número, o bot envia uma mensagem
+        await aruga.sendText(callData.peerJid, 'Não foi possível receber chamadas.\n\n-bot')
         .then(async () => {
-            // bot akan memblock nomor itu
+            // o bot irá bloquear aquele número
             await aruga.contactBlock(callData.peerJid)
         })
     })
 
 
-    // ketika seseorang mengirim pesan
+    // quando alguém manda uma mensagem
     aruga.onMessage(async (message) => {
-        aruga.getAmountOfLoadedMessages() // menghapus pesan cache jika sudah 3000 pesan.
+        aruga.getAmountOfLoadedMessages() // limpe o cache de mensagens se já houver 3.000 mensagens.
             .then((msg) => {
                 if (msg >= 3000) {
-                    console.log('[aruga]', color(`Loaded Message Reach ${msg}, cuting message cache...`, 'yellow'))
+                    console.log('[aruga]', color(`Mensagens carregadas ${msg}, cortando o cache de mensagens...`, 'yellow'))
                     aruga.cutMsgCache()
                 }
             })
