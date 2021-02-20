@@ -3579,7 +3579,7 @@ Este grupo foi fundado *${date}* as *${timeh}* por @${ownerwoi.replace('@c.us','
 *➸ Group Description* 
 ${desc}
 ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-_Desc atualizado por : @${chat.groupMetadata.desc Owner.replace('@c.us','')} sobre *${moment(chat.groupMetadata.descTime * 1000).format('dddd, DD MMMM YYYY')}* as ${moment(chat.groupMetadata.descTime * 1000).format('HH:mm:ss')}_`)
+_Desc atualizado por : @${chat.groupMetadata.descOwnerwoi.replace('@c.us','')} sobre *${moment(chat.groupMetadata.descTime * 1000).format('dddd, DD MMMM YYYY')}* as ${moment(chat.groupMetadata.descTime * 1000).format('HH:mm:ss')}_`)
 
                     break
                     case 'grupbot':
