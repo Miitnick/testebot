@@ -2561,13 +2561,13 @@ case 'ytsearch':
                 aruga.reply(from, 'Ada yang Error!', id)
             })
             break
-        case 'cuaca':
-            if (args.length == 0) return aruga.reply(from, `Untuk melihat cuaca pada suatu daerah\nketik: ${prefix}cuaca [daerah]`, id)
-            const cuacaq = body.slice(7)
-            const cuacap = await rugaapi.cuaca(cuacaq)
-            await aruga.reply(from, cuacap, id)
+        case 'clima':
+            if (args.length == 0) return aruga.reply(from, `Para ver o clima em uma área\nMande: ${prefix}clima [área]`, id)
+            const climaq = body.slice(7)
+            const climap = await rugaapi.cuaca(climaq)
+            await aruga.reply(from, climap, id)
             .catch(() => {
-                aruga.reply(from, 'Ada yang Error!', id)
+                aruga.reply(from, 'Há um erro!', id)
             })
             break
         case 'lyrics':
