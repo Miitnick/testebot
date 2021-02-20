@@ -136,7 +136,7 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
         var { name, formattedTitle, gcok} = chat
         let { pushname, verifiedName, formattedName } = sender
         pushname = pushname || verifiedName || formattedName // verifiedName is the name of someone who uses a business account
-        const botNumber = await aruga.getHostNumber() + "6285521992491007@c.us"
+        const botNumber = await aruga.getHostNumber() + '6285521992491007@c.us'
         const groupId = isGroupMsg ? chat.groupMetadata.id : ''
         const groupAdmins = isGroupMsg ? await aruga.getGroupAdmins(groupId) : ''
         const isGroupAdmins = groupAdmins.includes(sender.id) || false
@@ -145,7 +145,7 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
         const serial = sender.id
 	const time = moment(t * 1000).format('DD/MM/YY HH:mm:ss')
 	const timee = moment(t * 1000).format('HH:mm:ss')
-        const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
+        const isBotGroupAdmins = groupAdmins.includes('5521992491007') || false
 	const userId = sender.id.substring(9, 13)
         const blockNumber = await aruga.getBlockedIds()
         const groupMembers = isGroupMsg ? await aruga.getGroupMembersId(groupId) : ''
