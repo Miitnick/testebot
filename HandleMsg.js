@@ -1065,7 +1065,7 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
                 case 'antilink':
                     if (!isGroupMsg) return aruga.reply(from, 'Desculpe, este comando só pode ser usado dentro de grupos!', id)
                     if (!isGroupAdmins) return aruga.reply(from, 'Falha, este comando só pode ser usado por administradores de grupo!', id)
-                    if (!isBotGroupAdmins) return aruga.reply(from, 'Ó administrador, torne-me o administrador do grupo primeiro :)', id)
+                    if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, 'Ó administrador, torne-me o administrador do grupo primeiro :)', id)
                     if (args[0] == 'on') {
                         var cek = antilink.includes(chatId);
                         if(cek){
