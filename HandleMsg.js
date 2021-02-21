@@ -3556,7 +3556,7 @@ break
                     var desc = chat.groupMetadata.desc
                     var groupname = name
                     var timestp = chat.groupMetadata.creation
-                    var date = moment(timestp * 1000).format('dddd, DD MMMM YYYY')
+                    var date = moment(timestp * 1000).format('DD MMMM YYYY')
                     var timeh = moment(timestp * 1000).format('HH:mm:ss')
                     var ownerwoi = chat.groupMetadata.owner
                     var grplink = antilink.includes(chat.id)
@@ -3579,7 +3579,7 @@ Este grupo foi fundado *${date}* as *${timeh}* por @${ownerwoi.replace('@c.us','
 *➸ Group Description* 
 ${desc}
 ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
-_Desc atualizado por : @${chat.groupMetadata.owner.replace('@c.us','')} sobre *${moment(chat.groupMetadata.descTime * 1000).format('dddd, DD MMMM YYYY')}* as ${moment(chat.groupMetadata.descTime * 1000).format('HH:mm:ss')}_`)
+_Desc atualizado por : @${chat.groupMetadata.owner.replace('@c.us','')} sobre *${moment(chat.groupMetadata.descTime * 1000).format('DD MMMM YYYY')}* as ${moment(chat.groupMetadata.descTime * 1000).format('HH:mm:ss')}_`)
 
                     break
                     case 'grupbot':
