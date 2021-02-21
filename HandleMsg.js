@@ -1065,7 +1065,7 @@ moment.tz.setDefault('America/Sao_paulo').locale('id')
                 case 'antilink':
                     if (!isGroupMsg) return aruga.reply(from, 'Desculpe, este comando só pode ser usado dentro de grupos!', id)
                     if (!isGroupAdmins) return aruga.reply(from, 'Falha, este comando só pode ser usado por administradores de grupo!', id)
-                    if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, 'Ó administrador, torne-me o administrador do grupo primeiro :)', id)
+                    if (!isBotGroupAdmins) return aruga.reply(from, 'Ó administrador, torne-me o administrador do grupo primeiro :)', id)
                     if (args[0] == 'on') {
                         var cek = antilink.includes(chatId);
                         if(cek){
@@ -1094,7 +1094,7 @@ moment.tz.setDefault('America/Sao_paulo').locale('id')
 		    var qmoed = quotedMsgObj.sender.id
             if (!isGroupMsg) return aruga.reply(from, `Este recurso só pode ser usado em grupos`, id)
             if (!isGroupAdmins) return aruga.reply(from, `Este comando só pode ser usado por administradores de grupo`, id)
-            if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, `Este comando só pode ser usado quando o bot se torna administrador`, id)
+            if (!isBotGroupAdmins) return aruga.reply(from, `Este comando só pode ser usado quando o bot se torna administrador`, id)
             try {
                 await aruga.addParticipant(from, qmoed)
             } catch {
@@ -1291,7 +1291,7 @@ moment.tz.setDefault('America/Sao_paulo').locale('id')
         case 'setgroupname':
             if (!isGroupMsg) return aruga.reply(from, `Este recurso só pode ser usado em grupos`, id)
             if (!isGroupAdmins) return aruga.reply(from, `Este recurso só pode ser usado por administradores de grupo`, id)
-            if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, `Este recurso só pode ser usado por administradores de grupo`, id)
+            if (!isBotGroupAdmins) return aruga.reply(from, `Este recurso só pode ser usado por administradores de grupo`, id)
             const namagrup = body.slice(14)
             const sebelum = chat.groupMetadata.gcok
             let halaman = global.page ? global.page : await aruga.getPage()
@@ -1830,7 +1830,7 @@ break
 	//Group All User
 	case 'grouplink':
     case 'linkgc':
-            if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
+            if (!isBotGroupAdmins) return aruga.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
             if (isGroupMsg) {
                 const inviteLink = await aruga.getGroupInviteLink(groupId);
                 aruga.sendLinkWithAutoPreview(from, inviteLink, `\nLink group *${name}* Gunakan *${prefix}revoke* untuk mereset Link group`)
@@ -1839,7 +1839,7 @@ break
             }
             break
 	case "revoke":
-	if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
+	if (!isBotGroupAdmins) return aruga.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
                     if (isBotGroupAdmins) {
                         aruga
                             .revokeGroupInviteLink(from)
@@ -2950,7 +2950,7 @@ case 'ytsearch':
         // Group Commands (group admin only)
 	    case 'add':
             if (!isGroupMsg) return aruga.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
-            if (!isGroupAdmins && !isOwnerB) return aruga.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup!, Member mah gosah sok keras', id)
+            if (!isGroupAdmins) return aruga.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup!, Member mah gosah sok keras', id)
             if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, 'Gagal, kalo mau pake fitur ini, jadiin gua admin', id)
 	        if (args.length !== 1) return aruga.reply(from, `Untuk menggunakan ${prefix}add\nPenggunaan: ${prefix}add <nomor>\ncontoh: ${prefix}add 628xxx`, id)
                 try {
@@ -2962,7 +2962,7 @@ case 'ytsearch':
 	case 'pkick':
 	    if (!isGroupMsg) return aruga.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
             if (!isGroupAdmins && !isOwnerB) return aruga.reply(from, 'Gagal, fitur ini bakalan work kalo dipake sama admin, member mah gausah sok keras', id)
-            if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, 'Gagal, kalo mau pake fitur ini, jadiin gw admin', id)
+            if (!isBotGroupAdmins) return aruga.reply(from, 'Gagal, kalo mau pake fitur ini, jadiin gw admin', id)
             if (mentionedJidList.length === 0) return aruga.reply(from, 'Maaf, format pesan salah.\nSilahkan tag satu atau lebih orang yang akan dikeluarkan', id)
             if (mentionedJidList[0] === botNumber) return await aruga.reply(from, 'Maaf, format pesan salah.\nTidak dapat mengeluarkan akun bot sendiri', id)
             await aruga.sendTextWithMentions(from, `Done!, mengeluarkan ${mentionedJidList.map(x => `@${x.replace('@c.us', '')} agar menjadi anak pungut`).join('\n')}`)
@@ -2975,7 +2975,7 @@ case 'ytsearch':
 	    var qmid2 = quotedMsgObj.sender.id
             if (!isGroupMsg) return aruga.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
             if (!isGroupAdmins && !isOwnerB) return aruga.reply(from, 'Gagal, fitur ini bakalan work kalo dipake sama admin, member mah gausah sok keras', id)
-            if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, 'Gagal, kalo mau pake fitur ini, jadiin gw admin', id)
+            if (!isBotGroupAdmins) return aruga.reply(from, 'Gagal, kalo mau pake fitur ini, jadiin gw admin', id)
 	    try {
              await aruga.removeParticipant(groupId, qmid2)
             } catch {
@@ -3195,7 +3195,7 @@ case 'ytsearch':
 		var qmes = quotedMsgObj.sender.id
 		if (!isGroupMsg) return aruga.reply(from, 'Fitur ini hanya bisa digunakan didalam Grup!', id)
 		if (!isGroupAdmins && !isOwnerB) return aruga.reply(from, 'Fitur ini hanya bisa digunakan oleh Admin Grup!', id)
-		if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, 'Fitur ini hanya bisa digunakan ketika Bot menjadi Admin', id)
+		if (!isBotGroupAdmins) return aruga.reply(from, 'Fitur ini hanya bisa digunakan ketika Bot menjadi Admin', id)
 		try {
 		await aruga.removeParticipant(groupId, qmes)
 		await sleep(1000)
@@ -3266,7 +3266,7 @@ case 'ytsearch':
 		case 'mutegrup':
 			if (!isGroupMsg) return aruga.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
             if (!isGroupAdmins) return aruga.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup!', id)
-            if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, 'Gagal, silahkan tambahkan bot sebagai admin grup!', id)
+            if (!isBotGroupAdmins) return aruga.reply(from, 'Gagal, silahkan tambahkan bot sebagai admin grup!', id)
 			if (args.length !== 1) return aruga.reply(from, `Untuk mengubah settingan group chat agar hanya admin saja yang bisa chat\n\nPenggunaan:\n${prefix}mutegrup on --aktifkan\n${prefix}mutegrup off --nonaktifkan`, id)
             if (args[0] == 'on') {
 				aruga.setGroupToAdminsOnly(groupId, true).then(() => aruga.sendText(from, 'Berhasil mengubah agar hanya admin yang dapat chat!'))
@@ -3300,7 +3300,7 @@ case 'ytsearch':
         case 'kickall': //mengeluarkan semua member
         if (!isGroupMsg) return aruga.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
         if (!isOwnerB) return aruga.reply(from, 'Maaf, perintah ini hanya dapat dipakai oleh owner Bot karna ada bug pada fitur ini!\n\nsilahkan ketik /ownerbot untuk meminta bantuan fitur /kickall\n\nBest regards\n-Thoriq~', id)
-        if (!isBotGroupAdmins && !isOwnerB) return aruga.reply(from, 'Gagal, silahkan tambahkan bot sebagai admin grup!', id)
+        if (!isBotGroupAdmins) return aruga.reply(from, 'Gagal, silahkan tambahkan bot sebagai admin grup!', id)
             const allMem = await aruga.getGroupMembers(groupId)
             for (let i = 0; i < allMem.length; i++) {
                 if (groupAdmins.includes(allMem[i].id)) {
