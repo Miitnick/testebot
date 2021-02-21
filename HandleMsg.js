@@ -663,7 +663,7 @@ moment.tz.setDefault('America/Sao_paulo').locale('id')
             await aruga.sendText(from, menuId.textDonasi())
             break
           case 'tod':
-    aruga.reply(from, `Antes de jogar, prometa realizar qualquer comando dado.\n\nPor favor, selecione:\n➥${prefixo}truth\n➥${prefixo}dare`, id)
+    aruga.reply(from, `Antes de jogar, prometa realizar qualquer comando dado.\n\nPor favor, selecione:\n➥${prefix}truth\n➥${prefix}dare`, id)
     break
     case 'rneko':
 	aruga.reply(from, mess.wait, id)
