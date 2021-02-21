@@ -145,7 +145,7 @@ moment.tz.setDefault('America/Sao_paulo').locale('id')
         const serial = sender.id
 	const time = moment(t * 1000).format('DD/MM/YY HH:mm:ss')
 	const timee = moment(t * 1000).format('HH:mm:ss')
-        const isBotGroupAdmins = groupAdmins.includes(botNumber)
+        const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 	const userId = sender.id.substring(9, 13)
         const blockNumber = await aruga.getBlockedIds()
         const groupMembers = isGroupMsg ? await aruga.getGroupMembersId(groupId) : ''
