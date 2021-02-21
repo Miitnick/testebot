@@ -2742,7 +2742,7 @@ case 'ytsearch':
 	   const pncrian = body.slice(6)
 	   axios.get(`https://www.yt-download.org/api/widget/mp3/{YouTube video ID}`)
 		.then(async(res) => {
-		await aruga.sendFileFromUrl(from, `${res.data.result.imageUrl}`, '', `「 *Youtube Download* 」\n\nJudul: ${res.data.result.title}\nDurasi: ${res.data.result.duration}\nSize: ${res.data.result.size}\nURL: ${res.data.result.url}\n\n*_Waitt, sedang di prosess oleh Bot!_*`, id)
+		await aruga.sendFileFromUrl(from, `${res.data.result.image}`, '', `「 *Youtube Download* 」\n\nJudul: ${res.data.result.title}\nDurasi: ${res.data.result.duration}\nSize: ${res.data.result.size}\nURL: ${res.data.result.url}\n\n*_Waitt, sedang di prosess oleh Bot!_*`, id)
 		const saveit2 = await fetch(res.data.result.mp3)
 		const bufflah = await saveit2.buffer();
 		await sleep(1000)
