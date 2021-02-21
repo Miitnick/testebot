@@ -2740,7 +2740,7 @@ case 'ytsearch':
 		if (!isPrem) return aruga.reply(from, 'Maaf, command Premium! chat owner buat mendaftar!', id)
 		aruga.reply(from, mess.wait, id)
 	   const pncrian = body.slice(6)
-	   axios.get(`https://www.yt-download.org/@api/button/mp3/YouTube-Video-ID`)
+	   axios.get(`https://www.yt-download.org/api/widget/mp3/{YouTube video ID}`)
 		.then(async(res) => {
 		await aruga.sendFileFromUrl(from, `${res.data.result.imageUrl}`, '', `「 *Youtube Download* 」\n\nJudul: ${res.data.result.title}\nDurasi: ${res.data.result.duration}\nSize: ${res.data.result.size}\nURL: ${res.data.result.url}\n\n*_Waitt, sedang di prosess oleh Bot!_*`, id)
 		const saveit2 = await fetch(res.data.result.mp3)
