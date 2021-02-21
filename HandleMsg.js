@@ -132,7 +132,7 @@ module.exports = HandleMsg = async (aruga, message) => {
         const { type, id, from, t, sender, isGroupMsg, chat, chatId, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, author, mentionedJidList, } = message
         let { body } = message
 	var timeStart = Date.now() / 1000
-moment.tz.setDefault('Asia/Jakarta').locale('id')
+moment.tz.setDefault('America/Sao_paulo').locale('id')
         var { name, formattedTitle, gcok} = chat
         let { pushname, verifiedName, formattedName } = sender
         pushname = pushname || verifiedName || formattedName // verifiedName is the name of someone who uses a business account
