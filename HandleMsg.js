@@ -2,7 +2,7 @@
 const { decryptMedia } = require('@open-wa/wa-automate')
 
 const moment = require('moment-timezone')
-moment.tz.setDefault('Asia/Jakarta').locale('id')
+moment.tz.setDefault('America/Sao_paulo').locale('id')
 const axios = require('axios')
 const os = require('os')
 const speed = require('performance-now')
