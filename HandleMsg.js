@@ -3500,8 +3500,8 @@ break
 			})
 			break
                 case 'randomhentai':
-                        if (!isGroupMsg) return aruga.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-                        if (!isPrem) return aruga.reply(from, 'Command Premium\nChat owner buat mendaftar', id)
+                        if (!isGroupMsg) return aruga.reply(from, 'Este comando só pode ser usado em grupos!', id)
+                        if (!isPrem) return aruga.reply(from, 'Comando para usuarios premium\nPor favor contate o dono do bot', id)
                         aruga.sendText(from, mess.wait);
                         axios.get(`https://tobz-api.herokuapp.com/api/hentai?apikey=BotWeA`).then(res => {
                         aruga.sendFileFromUrl(from, res.data.result, 'hentai.jpg','', id)
@@ -3882,7 +3882,7 @@ _Descriçao atualizado por : @${chat.groupMetadata.owner.replace('@c.us','')} no
         default:
             if (chats.startsWith(`${prefix}`)) {
                 const slh = body.trim().split(' ')
-                aruga.reply(from, `Maaf *_${pushname}_*, Command *${slh[0]}* tidak ada didalam menu!\n\nSilahkan ketik *${prefix}menu* Untuk menampilkan command`, id)
+                aruga.reply(from, `Desculpe *_${pushname}_*, o comando *${slh[0]}* não está no menu!\n\nPor favor digite *${prefix}menu* Para exibir o comando`, id)
             }
             break
         case 'adminlist':
